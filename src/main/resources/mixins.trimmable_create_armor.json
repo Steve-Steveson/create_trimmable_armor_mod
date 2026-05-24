@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "compatibilityLevel": "JAVA_17",
+  "package": "net.steveson.createtrimmable.mixin",
+  "refmap": "mixins.trimmable_create_armor.refmap.json",
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "mixins": [
+
+  ]
+}
