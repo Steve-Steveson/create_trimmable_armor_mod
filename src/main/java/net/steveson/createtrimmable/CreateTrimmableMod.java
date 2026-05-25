@@ -52,30 +52,7 @@ public class CreateTrimmableMod
 
     private void commonSetup(final FMLCommonSetupEvent event)
     {
-////            ForgeRegistries.ITEMS.tags()
-//
-//        // Example: Get all items in the "forge:ingots/copper" tag
-//        ResourceLocation tagId = new ResourceLocation("minecraft", "trim_materials");
-//        TagKey<Item> tagKey = TagKey.create(ForgeRegistries.ITEMS.getRegistryKey(), tagId);
-//        ITag<Item> tag = ForgeRegistries.ITEMS.tags().getTag(tagKey);
-//
-//
-////            Collection<Item> items = ItemTags.TRIM_MATERIALS. .getAllElements();
-//
-//
-//
-//
-//
-////            ITag<Item> tag = ForgeRegistries.ITEMS.tags().getTag(ItemTags.TRIM_MATERIALS);
-//        System.out.println("THE PRINT CODE IS WORKING  I AM PRINTING THE CODE");
-//        System.out.println("THE SIZE IS " + tag.size());
-//
-//// Iterate over items
-//        for (Item item : tag) {
-////                System.out.println(item.getName(1).getString());
-//            System.out.println("THE PRINT CODE IS WORKING  I AM PRINTING THE CODE");
-//            System.out.println(item.getDefaultInstance().getDisplayName());
-//        }
+
     }
 
     // Add the example block item to the building blocks tab
@@ -132,11 +109,6 @@ public class CreateTrimmableMod
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event)
         {
-
-
-
-
-
 
         }
     }
