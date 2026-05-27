@@ -6,7 +6,12 @@
                 "trims/items/leggings_trim",
                 "trims/items/chestplate_trim",
                 "trims/items/helmet_trim",
-                "trims/items/boots_trim"
+                "trims/items/boots_trim",
+
+                "create:trims/items/card_leggings_trim",
+                "create:trims/items/card_chestplate_trim",
+                "create:trims/items/card_helmet_trim",
+                "create:trims/items/card_boots_trim"
             ],
             "palette_key": "trims/color_palettes/trim_palette",
             "permutations": {
