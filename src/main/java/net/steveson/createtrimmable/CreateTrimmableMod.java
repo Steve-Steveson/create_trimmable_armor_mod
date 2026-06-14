@@ -22,8 +22,10 @@ import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.fml.loading.FMLEnvironment;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.tags.ITag;
+import net.steveson.createtrimmable.client.ClientEventHandler;
 import org.slf4j.Logger;
 
 import java.util.Collection;
@@ -48,6 +50,12 @@ public class CreateTrimmableMod
         modEventBus.addListener(this::addCreative);
 
         context.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
+
+        if (FMLEnvironment.dist == Dist.CLIENT)
+        {
+            ClientEventHandler.init();
+        }
+
     }
 
     private void commonSetup(final FMLCommonSetupEvent event)

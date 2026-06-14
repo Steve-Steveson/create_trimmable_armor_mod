@@ -1,0 +1,8 @@
+{
+  "loader": "trimmable_create_armor:trimmed_item",
+  "parent": "forge:item/default",
+  "textures": {
+    "armor": "create:item/netherite_diving_helmet",
+    "trim": "minecraft:trims/items/helmet_trim"
+  }
+}
