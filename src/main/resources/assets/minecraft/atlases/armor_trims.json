@@ -69,13 +69,22 @@
                 "create:trims/models/armor/card_host",
                 "create:trims/models/armor/card_host_leggings",
 
-
+                "trimmable_create_armor:trims/block/tank_coast",
                 "trimmable_create_armor:trims/block/tank_sentry",
                 "trimmable_create_armor:trims/block/tank_dune",
-
-
-
-                "trimmable_create_armor:trims/block/tank_vex"
+                "trimmable_create_armor:trims/block/tank_wild",
+                "trimmable_create_armor:trims/block/tank_ward",
+                "trimmable_create_armor:trims/block/tank_eye",
+                "trimmable_create_armor:trims/block/tank_vex",
+                "trimmable_create_armor:trims/block/tank_tide",
+                "trimmable_create_armor:trims/block/tank_snout",
+                "trimmable_create_armor:trims/block/tank_rib",
+                "trimmable_create_armor:trims/block/tank_spire",
+                "trimmable_create_armor:trims/block/tank_wayfinder",
+                "trimmable_create_armor:trims/block/tank_shaper",
+                "trimmable_create_armor:trims/block/tank_silence",
+                "trimmable_create_armor:trims/block/tank_raiser",
+                "trimmable_create_armor:trims/block/tank_host"
 
             ],
             "palette_key": "trims/color_palettes/trim_palette",
