@@ -1,0 +1,8 @@
+{
+  "loader": "trimmable_create_armor:trimmed_item",
+  "parent": "forge:item/default",
+  "textures": {
+    "armor": "beautiful_opals:item/opal_chestplate",
+    "trim": "minecraft:trims/items/chestplate_trim"
+  }
+}
