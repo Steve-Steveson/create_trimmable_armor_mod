@@ -1,5 +1,8 @@
 {
 	"credit": "Made with Blockbench",
+
+	"loader": "trimmable_create_armor:trimmed_tank",
+
 	"textures": {
 		"0": "create:block/netherite_backtank",
 		"particle": "create:block/netherite_backtank"

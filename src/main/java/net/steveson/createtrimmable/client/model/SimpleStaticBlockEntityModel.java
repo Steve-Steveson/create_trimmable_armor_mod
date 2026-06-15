@@ -9,6 +9,7 @@ package net.steveson.createtrimmable.client.model;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.renderer.LightTexture;
+import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.block.model.BakedQuad;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
@@ -47,6 +48,7 @@ public interface SimpleStaticBlockEntityModel<T extends IBakedGeometry<T>, B ext
         final int packedLight = LightTexture.pack(level.getBrightness(LightLayer.BLOCK, pos), level.getBrightness(LightLayer.SKY, pos));
         final int packedOverlay = OverlayTexture.NO_OVERLAY;
         final List<BakedQuad> quads = new ArrayList<>(faces(blockEntity));
+//        final MultiBufferSource buffest = new MultiBufferSource.BufferSource(quads::add);
         final VertexConsumer buffer = new QuadBakingVertexConsumer(quads::add);
         final PoseStack poseStack = new PoseStack();
 

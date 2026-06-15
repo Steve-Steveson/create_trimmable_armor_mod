@@ -10,6 +10,7 @@
     "AArmorTrimMixin"
   ],
   "client": [
-    "BacktankArmorLayerMixin"
+    "BacktankArmorLayerMixin",
+    "GetTrimHumanoidArmorLayerMixin"
   ]
 }
