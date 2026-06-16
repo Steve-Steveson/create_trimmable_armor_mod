@@ -1,0 +1,6 @@
+{
+	"parent": "trimmable_create_armor:block/backtank_generic",
+	"textures": {
+		"all": "create:block/copper_backtank"
+	}
+}

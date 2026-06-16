@@ -26,6 +26,7 @@ import net.minecraftforge.fml.loading.FMLEnvironment;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.tags.ITag;
 import net.steveson.createtrimmable.client.ClientEventHandler;
+import net.steveson.createtrimmable.client.model.AddonPartialModels;
 import org.slf4j.Logger;
 
 import java.util.Collection;
@@ -117,7 +118,7 @@ public class CreateTrimmableMod
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event)
         {
-
+            AddonPartialModels.register();
         }
     }
 }

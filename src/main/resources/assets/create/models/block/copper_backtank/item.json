@@ -2,7 +2,7 @@
 	"loader": "trimmable_create_armor:trimmed_tank_item",
 	"parent": "forge:item/default",
 	"textures": {
-		"armor": "create:block/netherite_backtank",
+		"armor": "create:block/copper_backtank",
 		"trim": "trimmable_create_armor:trims/items/tank_raiser"
 	}
 }
