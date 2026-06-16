@@ -1,6 +1,0 @@
-{
-	"parent": "trimmable_create_armor:block/backtank_generic",
-	"textures": {
-		"all": "trimmable_create_armor:trims/items/tank_host_redstone"
-	}
-}

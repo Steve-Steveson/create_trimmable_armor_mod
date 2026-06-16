@@ -3,8 +3,6 @@ package net.steveson.createtrimmable.client;
 import net.minecraftforge.client.event.ModelEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.steveson.createtrimmable.client.model.TrimmedBacktankItemModel;
-import net.steveson.createtrimmable.client.model.TrimmedBacktankModel;
 import net.steveson.createtrimmable.client.model.TrimmedItemModel;
 
 public class ClientEventHandler {
@@ -15,17 +13,8 @@ public class ClientEventHandler {
         bus.addListener(ClientEventHandler::registerModelLoaders);
     }
 
-
-
     public static void registerModelLoaders(ModelEvent.RegisterGeometryLoaders event)
     {
-//        event.register("contained_fluid", new ContainedFluidModel.Loader());
         event.register("trimmed_item", new TrimmedItemModel.Loader());
-        event.register("trimmed_tank_item", new TrimmedBacktankItemModel.Loader());
-        event.register("trimmed_tank", TrimmedBacktankModel.INSTANCE);
-//        event.register("double_ingot_pile", DoubleIngotPileBlockModel.INSTANCE);
-//        event.register("sheet_pile", SheetPileBlockModel.INSTANCE);
-//        event.register("scraping", ScrapingBlockModel.INSTANCE);
     }
-
 }

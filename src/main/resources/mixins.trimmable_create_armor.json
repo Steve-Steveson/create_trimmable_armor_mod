@@ -7,11 +7,9 @@
     "defaultRequire": 1
   },
   "mixins": [
-    "AArmorTrimMixin",
-    "BacktankRendererMixin"
+    "AArmorTrimMixin"
   ],
   "client": [
-    "BacktankArmorLayerMixin",
     "GetTrimHumanoidArmorLayerMixin"
   ]
 }
