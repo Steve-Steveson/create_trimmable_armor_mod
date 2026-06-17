@@ -8,6 +8,7 @@ import net.minecraft.core.Holder;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.armortrim.ArmorTrim;
+import net.minecraft.world.item.armortrim.TrimMaterial;
 import net.minecraft.world.item.armortrim.TrimPattern;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
@@ -24,7 +25,12 @@ import java.util.function.Function;
 public abstract class AdjustedArmorTrimMixin {
     @Shadow
     @Final
+    private Holder<TrimMaterial> material;
+
+    @Shadow
+    @Final
     private Holder<TrimPattern> pattern;
+
 
     @Shadow
     @Final
@@ -38,6 +44,26 @@ public abstract class AdjustedArmorTrimMixin {
 
     @Shadow
     protected abstract String getColorPaletteSuffix(ArmorMaterial pArmorMaterial);
+
+    @Inject(method = "getColorPaletteSuffix", at = @At(value = "HEAD"), cancellable = true)
+    private void getColorDarkerPaletteSuffix(ArmorMaterial pArmorMaterial, CallbackInfoReturnable<String> cir) {
+//        System.out.println("QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ");
+        if (pArmorMaterial == AllArmorMaterials.COPPER) {
+            String armorMatName = pArmorMaterial.getName();
+            String[] armorMatNameSplit = armorMatName.split(":");
+
+            String trimName = this.material.value().assetName();
+
+            if (armorMatNameSplit.length == 2 && armorMatNameSplit[1].equalsIgnoreCase(trimName)) {
+                cir.setReturnValue(trimName + "_darker");
+            }
+//            System.out.println("the armor is " + pArmorMaterial.getName());
+//            System.out.println("the armor is " + ((ModArmorMaterials) pArmorMaterial).name());
+////            System.out.println(this.material);
+////            System.out.println(this.material.value());
+//            System.out.println("the trim is " + this.material.value().assetName());
+        }
+    }
 
 
     @Unique

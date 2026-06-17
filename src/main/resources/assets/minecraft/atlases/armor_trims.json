@@ -72,6 +72,8 @@
             ],
             "palette_key": "trims/color_palettes/trim_palette",
             "permutations": {
+                "copper_darker": "minecraft:trims/color_palettes/copper_darker",
+
                 "rose_quartz": "trimmable_create_armor:trims/color_palettes/rose_quartz",
                 "brass": "trimmable_create_armor:trims/color_palettes/brass",
                 "zinc": "trimmable_create_armor:trims/color_palettes/zinc",

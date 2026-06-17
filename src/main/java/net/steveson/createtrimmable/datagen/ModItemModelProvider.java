@@ -52,11 +52,11 @@ public class ModItemModelProvider extends ItemModelProvider {
         trimmedCardboardArmorItem(AllItems.CARDBOARD_CHESTPLATE.get());
         trimmedCardboardArmorItem(AllItems.CARDBOARD_LEGGINGS.get());
         trimmedCardboardArmorItem(AllItems.CARDBOARD_BOOTS.get());
-//
-//        trimmedDivingArmorItem(AllItems.COPPER_DIVING_HELMET.get());
-//        trimmedDivingArmorItem(AllItems.COPPER_DIVING_BOOTS.get());
-//        trimmedDivingArmorItem(AllItems.NETHERITE_DIVING_HELMET.get());
-//        trimmedDivingArmorItem(AllItems.NETHERITE_DIVING_BOOTS.get());
+
+        trimmedDivingArmorItem(AllItems.COPPER_DIVING_HELMET.get());
+        trimmedDivingArmorItem(AllItems.COPPER_DIVING_BOOTS.get());
+        trimmedDivingArmorItem(AllItems.NETHERITE_DIVING_HELMET.get());
+        trimmedDivingArmorItem(AllItems.NETHERITE_DIVING_BOOTS.get());
 
 
 
@@ -162,6 +162,16 @@ public class ModItemModelProvider extends ItemModelProvider {
                 String currentTrimName = armorItemPath.replaceFirst("item/", "item/create/") + "_" + trimMaterial.location().getPath() + "_trim";
                 if (isVanilla) {
                     trimPath = "trims/items/" + armorType + "_trim_" + trimMaterial.location().getPath();
+                }
+
+
+                String[] armorMatNameSplit = armorItem.getMaterial().getName().split(":");
+                boolean overrideDarker = armorMatNameSplit.length == 2 && armorMatNameSplit[1].equalsIgnoreCase(trimMaterial.location().getPath());
+
+                if (overrideDarker){
+                    trimPath = trimPath + "_darker";
+//                    currentTrimName = currentTrimName + "_darker";
+                    currentTrimName = armorItemPath.replaceFirst("item/", "item/create/") + "_" + trimMaterial.location().getPath() + "_darker_trim";
                 }
 
 
