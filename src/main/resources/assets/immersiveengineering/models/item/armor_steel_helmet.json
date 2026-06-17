@@ -1,8 +1,0 @@
-{
-  "loader": "trimmable_create_armor:trimmed_item",
-  "parent": "forge:item/default",
-  "textures": {
-    "armor": "immersiveengineering:item/armor_steel_helmet",
-    "trim": "minecraft:trims/items/helmet_trim"
-  }
-}

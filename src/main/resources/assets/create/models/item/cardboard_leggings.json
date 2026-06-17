@@ -1,8 +1,0 @@
-{
-  "loader": "trimmable_create_armor:trimmed_item",
-  "parent": "forge:item/default",
-  "textures": {
-    "armor": "create:item/cardboard_leggings",
-    "trim": "create:trims/items/card_leggings_trim"
-  }
-}

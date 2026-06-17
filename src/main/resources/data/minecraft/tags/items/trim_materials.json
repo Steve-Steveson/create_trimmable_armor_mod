@@ -2,6 +2,8 @@
     "values": [
         "create:polished_rose_quartz",
         "create:brass_ingot",
-        "create:zinc_ingot"
+        "create:zinc_ingot",
+
+        "create:andesite_alloy"
     ]
 }
