@@ -47,7 +47,6 @@ public abstract class AdjustedArmorTrimMixin {
 
     @Inject(method = "getColorPaletteSuffix", at = @At(value = "HEAD"), cancellable = true)
     private void getColorDarkerPaletteSuffix(ArmorMaterial pArmorMaterial, CallbackInfoReturnable<String> cir) {
-//        System.out.println("QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ");
         if (pArmorMaterial == AllArmorMaterials.COPPER) {
             String armorMatName = pArmorMaterial.getName();
             String[] armorMatNameSplit = armorMatName.split(":");
@@ -57,11 +56,6 @@ public abstract class AdjustedArmorTrimMixin {
             if (armorMatNameSplit.length == 2 && armorMatNameSplit[1].equalsIgnoreCase(trimName)) {
                 cir.setReturnValue(trimName + "_darker");
             }
-//            System.out.println("the armor is " + pArmorMaterial.getName());
-//            System.out.println("the armor is " + ((ModArmorMaterials) pArmorMaterial).name());
-////            System.out.println(this.material);
-////            System.out.println(this.material.value());
-//            System.out.println("the trim is " + this.material.value().assetName());
         }
     }
 
