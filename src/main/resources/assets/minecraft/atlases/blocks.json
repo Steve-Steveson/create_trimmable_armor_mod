@@ -20,6 +20,7 @@
                 "rose_quartz": "trimmable_create_armor:trims/color_palettes/rose_quartz",
                 "brass": "trimmable_create_armor:trims/color_palettes/brass",
                 "zinc": "trimmable_create_armor:trims/color_palettes/zinc",
+                "exp": "trimmable_create_armor:trims/color_palettes/exp",
                 "andesite": "trimmable_create_armor:trims/color_palettes/andesite"
             }
         }

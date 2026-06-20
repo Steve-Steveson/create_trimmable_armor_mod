@@ -20,6 +20,12 @@
       }
     },
     {
+      "model": "trimmable_create_armor:item/create/copper_diving_boots_exp_trim",
+      "predicate": {
+        "minecraft:trim_type": 0.04
+      }
+    },
+    {
       "model": "trimmable_create_armor:item/create/copper_diving_boots_andesite_trim",
       "predicate": {
         "minecraft:trim_type": 0.07

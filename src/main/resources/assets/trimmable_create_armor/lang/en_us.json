@@ -3,5 +3,7 @@
     "trim_material.trimmable_create_armor.brass": "Brass Material",
     "trim_material.trimmable_create_armor.zinc": "Zinc Material",
 
+    "trim_material.trimmable_create_armor.exp": "Experience Nugget Material",
+
     "trim_material.trimmable_create_armor.andesite": "Andesite Alloy Material"
 }

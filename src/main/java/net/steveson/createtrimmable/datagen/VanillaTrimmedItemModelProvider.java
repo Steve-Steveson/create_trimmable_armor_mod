@@ -26,6 +26,7 @@ public class VanillaTrimmedItemModelProvider extends ItemModelProvider {
         trimMaterials.put(ModTrimMaterials.ROSE_QUARTZ, 0.01F);
         trimMaterials.put(ModTrimMaterials.BRASS, 0.02F);
         trimMaterials.put(ModTrimMaterials.ZINC, 0.03F);
+        trimMaterials.put(ModTrimMaterials.EXP, 0.04F);
 
         trimMaterials.put(ModTrimMaterials.ANDESITE, 0.07F);
 

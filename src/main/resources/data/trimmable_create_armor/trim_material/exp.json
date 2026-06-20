@@ -1,0 +1,9 @@
+{
+    "asset_name": "exp",
+    "description": {
+        "color": "#64af3c",
+        "translate": "trim_material.trimmable_create_armor.exp"
+    },
+    "ingredient": "create:experience_nugget",
+    "item_model_index": 0.04
+}

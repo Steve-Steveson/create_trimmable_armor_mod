@@ -21,6 +21,8 @@ public class ModTrimMaterials {
             ResourceKey.create(Registries.TRIM_MATERIAL, ResourceLocation.fromNamespaceAndPath(CreateTrimmableMod.MOD_ID, "brass"));
     public static final ResourceKey<TrimMaterial> ZINC =
             ResourceKey.create(Registries.TRIM_MATERIAL, ResourceLocation.fromNamespaceAndPath(CreateTrimmableMod.MOD_ID, "zinc"));
+    public static final ResourceKey<TrimMaterial> EXP =
+            ResourceKey.create(Registries.TRIM_MATERIAL, ResourceLocation.fromNamespaceAndPath(CreateTrimmableMod.MOD_ID, "exp"));
 
     public static final ResourceKey<TrimMaterial> ANDESITE =
             ResourceKey.create(Registries.TRIM_MATERIAL, ResourceLocation.fromNamespaceAndPath(CreateTrimmableMod.MOD_ID, "andesite"));
@@ -30,6 +32,7 @@ public class ModTrimMaterials {
         register(pContext, ROSE_QUARTZ, AllItems.ROSE_QUARTZ.get(), Style.EMPTY.withColor(16008305), 0.01F);
         register(pContext, BRASS, AllItems.BRASS_INGOT.get(), Style.EMPTY.withColor(14132061), 0.02F);
         register(pContext, ZINC, AllItems.BRASS_INGOT.get(), Style.EMPTY.withColor(10796961), 0.03F);
+        register(pContext, EXP, AllItems.EXP_NUGGET.get(), Style.EMPTY.withColor(6598460), 0.04F);
 
         register(pContext, ANDESITE, AllItems.ANDESITE_ALLOY.get(), Style.EMPTY.withColor(9476499), 0.07F);
     }

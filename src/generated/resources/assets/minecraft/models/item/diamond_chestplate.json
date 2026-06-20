@@ -20,6 +20,12 @@
       }
     },
     {
+      "model": "trimmable_create_armor:item/minecraft/diamond_chestplate_exp_trim",
+      "predicate": {
+        "minecraft:trim_type": 0.04
+      }
+    },
+    {
       "model": "trimmable_create_armor:item/minecraft/diamond_chestplate_andesite_trim",
       "predicate": {
         "minecraft:trim_type": 0.07
