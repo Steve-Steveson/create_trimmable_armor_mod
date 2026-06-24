@@ -1,0 +1,9 @@
+{
+    "asset_name": "zinc",
+    "description": {
+        "color": "#a4bfa1",
+        "translate": "trim_material.trimmable_create_armor.zinc"
+    },
+    "ingredient": "create:zinc_ingot",
+    "item_model_index": 0.03
+}

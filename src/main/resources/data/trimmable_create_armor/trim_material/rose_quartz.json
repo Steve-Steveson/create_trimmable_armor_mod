@@ -1,0 +1,9 @@
+{
+    "asset_name": "rose_quartz",
+    "description": {
+        "color": "#f44471",
+        "translate": "trim_material.trimmable_create_armor.rose_quartz"
+    },
+    "ingredient": "create:polished_rose_quartz",
+    "item_model_index": 0.01
+}

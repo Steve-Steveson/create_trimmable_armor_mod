@@ -1,0 +1,9 @@
+{
+    "asset_name": "brass",
+    "description": {
+        "color": "#d7a35d",
+        "translate": "trim_material.trimmable_create_armor.brass"
+    },
+    "ingredient": "create:brass_ingot",
+    "item_model_index": 0.02
+}

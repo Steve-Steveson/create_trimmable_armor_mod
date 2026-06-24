@@ -1,0 +1,34 @@
+{
+	"schemaVersion": 1,
+	"id": "trimmable_create_armor",
+	"version": "${version}",
+	"name": "Trimmable Create Armor",
+	"description": "Adds trims using Create materials, makes diving gear trimmable, and improves how cardboard handles modded trim patterns",
+	"authors": [
+		"Steve_Steveson, Steve_StevesonB"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "MIT",
+	"icon": "assets/trimmable_create_armor/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+          "net.steveson.createtrimmable.CreateTrimmableMod"
+		],
+		"fabric-datagen": [
+			"net.steveson.createtrimmable.CreateTrimmableModDataGenerator"
+		]
+	},
+	"mixins": [
+		"trimmable_create_armor.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.19.2",
+		"minecraft": "~1.20.1",
+		"java": ">=17",
+		"fabric-api": "*"
+	}
+}
