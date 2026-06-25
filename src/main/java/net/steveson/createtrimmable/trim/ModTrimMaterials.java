@@ -31,7 +31,7 @@ public class ModTrimMaterials {
     public static void bootstrap(BootstapContext<TrimMaterial> pContext) {
         register(pContext, ROSE_QUARTZ, AllItems.ROSE_QUARTZ.get(), Style.EMPTY.withColor(16008305), 0.01F);
         register(pContext, BRASS, AllItems.BRASS_INGOT.get(), Style.EMPTY.withColor(14132061), 0.02F);
-        register(pContext, ZINC, AllItems.BRASS_INGOT.get(), Style.EMPTY.withColor(10796961), 0.03F);
+        register(pContext, ZINC, AllItems.ZINC_INGOT.get(), Style.EMPTY.withColor(10796961), 0.03F);
         register(pContext, EXP, AllItems.EXP_NUGGET.get(), Style.EMPTY.withColor(6598460), 0.04F);
 
         register(pContext, ANDESITE, AllItems.ANDESITE_ALLOY.get(), Style.EMPTY.withColor(9476499), 0.07F);
