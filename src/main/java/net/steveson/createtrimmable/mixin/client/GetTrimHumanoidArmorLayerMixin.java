@@ -37,7 +37,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
-@Mixin(ArmorFeatureRenderer.class)
+@Mixin(value = ArmorFeatureRenderer.class, priority = 100)
 public class GetTrimHumanoidArmorLayerMixin<A extends BipedEntityModel> {
 //    @Shadow
 //    @Final
@@ -58,15 +58,17 @@ public class GetTrimHumanoidArmorLayerMixin<A extends BipedEntityModel> {
             ),
             cancellable = true
     )
-    private void create$onRenderArmorPiece(MatrixStack poseStack, VertexConsumerProvider bufferSource, LivingEntity entity, EquipmentSlot slot, int light, BipedEntityModel<?> model, CallbackInfo ci, @Local(name = "itemStack") ItemStack stack) {
-        if (stack.getItem() instanceof CustomRenderedArmorItem renderer) {
-            renderer.renderArmorPiece((ArmorFeatureRenderer<?, ?, ?>) (Object) this, poseStack, bufferSource, entity, slot, light, model, stack);
+    private void create$onRenderArmorPiece(MatrixStack poseStack, VertexConsumerProvider bufferSource, LivingEntity entity, EquipmentSlot slot, int light, BipedEntityModel<?> model, CallbackInfo ci, @Local ItemStack itemStack) {
+        if (itemStack.getItem() instanceof CustomRenderedArmorItem renderer) {
+            renderer.renderArmorPiece((ArmorFeatureRenderer<?, ?, ?>) (Object) this, poseStack, bufferSource, entity, slot, light, model, itemStack);
 
             HumanoidArmorLayerAccessor accessor = (HumanoidArmorLayerAccessor) this;
             BipedEntityModel<?> innerModel = accessor.create$getInnerModel();
 
-            boolean isStackedTrimsEnabled = FabricLoader.getInstance().isModLoaded("stacked_armor_trims");
-            if (isStackedTrimsEnabled && stack.getOrCreateNbt().contains("Trims")) {
+            boolean isStackedTrimsEnabled = FabricLoader.getInstance().isModLoaded("stacked_trims");
+            if (isStackedTrimsEnabled &&
+                    itemStack.getNbt() != null &&
+                    itemStack.getNbt().getList("Trims",10) != null) {
                 try {
                     Class<?> clazz = Class.forName(
                             "io.github.apfelrauber.stacked_trims.ArmorTrimList"
@@ -83,14 +85,14 @@ public class GetTrimHumanoidArmorLayerMixin<A extends BipedEntityModel> {
                     Object result = method.invoke(
                             null,
                             registryManager,
-                            stack
+                            itemStack
                     );
 
                     if (result instanceof Optional<?>) {
                         ((Optional<?>) result).ifPresent((armorTrimsCapture)-> {
                             if (armorTrimsCapture instanceof List<?>) {
                                 List<ArmorTrim> armorTrims = (List<ArmorTrim>)((List<?>)armorTrimsCapture ) ;
-                                Collections.reverse(armorTrims);
+//                                Collections.reverse(armorTrims);
                                 for (ArmorTrim armorTrim : armorTrims) {
                                     renderTrim(ArmorMaterials.NETHERITE, poseStack, bufferSource, light, armorTrim, (A) model, false);
                                 }
@@ -101,11 +103,11 @@ public class GetTrimHumanoidArmorLayerMixin<A extends BipedEntityModel> {
                     LOGGER.error("Failed to call Multiple Armor Trims", e);
                 }
             } else {
-                ArmorTrim.getTrim(entity.getWorld().getRegistryManager(), stack).ifPresent(trim ->
+                ArmorTrim.getTrim(entity.getWorld().getRegistryManager(), itemStack).ifPresent(trim ->
                         this.renderTrim(ArmorMaterials.NETHERITE, poseStack, bufferSource, light, trim, (A) model, false));
             }
 
-            if (stack.hasGlint()) {
+            if (itemStack.hasGlint()) {
                 this.renderGlint(poseStack, bufferSource, light, (A) model);
                 this.renderGlint(poseStack, bufferSource, light, (A) innerModel);
 //                this.renderGlintDirect(poseStack, bufferSource, light, model);
@@ -124,10 +126,12 @@ public class GetTrimHumanoidArmorLayerMixin<A extends BipedEntityModel> {
             ),
             cancellable = true
     )
-    private void cta$onRenderArmorPiece(MatrixStack poseStack, VertexConsumerProvider bufferSource, LivingEntity entity, EquipmentSlot slot, int light, BipedEntityModel<?> model, CallbackInfo ci, @Local(name = "itemStack") ItemStack stack) {
-        if (stack.isOf(AllItems.COPPER_BACKTANK.get())) {
-            boolean isStackedTrimsEnabled = FabricLoader.getInstance().isModLoaded("stacked_armor_trims");
-            if (isStackedTrimsEnabled && stack.getOrCreateNbt().contains("Trims")) {
+    private void cta$onRenderArmorPiece(MatrixStack poseStack, VertexConsumerProvider bufferSource, LivingEntity entity, EquipmentSlot slot, int light, BipedEntityModel<?> model, CallbackInfo ci, @Local ItemStack itemStack) {
+        if (itemStack.isOf(AllItems.COPPER_BACKTANK.get())) {
+            boolean isStackedTrimsEnabled = FabricLoader.getInstance().isModLoaded("stacked_trims");
+            if (isStackedTrimsEnabled &&
+                    itemStack.getNbt() != null &&
+                    itemStack.getNbt().getList("Trims",10) != null) {
                 try {
                     Class<?> clazz = Class.forName(
                             "io.github.apfelrauber.stacked_trims.ArmorTrimList"
@@ -144,14 +148,14 @@ public class GetTrimHumanoidArmorLayerMixin<A extends BipedEntityModel> {
                     Object result = method.invoke(
                             null,
                             registryManager,
-                            stack
+                            itemStack
                     );
 
                     if (result instanceof Optional<?>) {
                         ((Optional<?>) result).ifPresent((armorTrimsCapture)-> {
                             if (armorTrimsCapture instanceof List<?>) {
                                 List<ArmorTrim> armorTrims = (List<ArmorTrim>)((List<?>)armorTrimsCapture ) ;
-                                Collections.reverse(armorTrims);
+//                                Collections.reverse(armorTrims);
                                 for (ArmorTrim armorTrim : armorTrims) {
                                     renderSmallTrim(AllArmorMaterials.COPPER, poseStack, bufferSource, light, armorTrim, (A) model);
                                 }
@@ -162,11 +166,11 @@ public class GetTrimHumanoidArmorLayerMixin<A extends BipedEntityModel> {
                     LOGGER.error("Failed to call Multiple Armor Trims", e);
                 }
             } else {
-                ArmorTrim.getTrim(entity.getWorld().getRegistryManager(), stack).ifPresent(trim ->
+                ArmorTrim.getTrim(entity.getWorld().getRegistryManager(), itemStack).ifPresent(trim ->
                         this.renderSmallTrim(AllArmorMaterials.COPPER, poseStack, bufferSource, light, trim, (A) model));
             }
 
-            if (stack.hasGlint()) {
+            if (itemStack.hasGlint()) {
                 this.renderGlint(poseStack, bufferSource, light, (A) model);
             }
             ci.cancel();

@@ -2,11 +2,14 @@ package net.steveson.createtrimmable;
 
 import net.fabricmc.api.ModInitializer;
 
+import net.fabricmc.loader.api.FabricLoader;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class CreateTrimmableMod implements ModInitializer {
 	public static final String MOD_ID = "trimmable_create_armor";
+
+//	public static final Boolean isStackedTrimsEnabled3 = FabricLoader.getInstance().isModLoaded("stacked_trims");
 
 	// This logger is used to write text to the console and the log file.
 	// It is considered best practice to use your mod id as the logger's name.
@@ -19,6 +22,8 @@ public class CreateTrimmableMod implements ModInitializer {
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
 
-		LOGGER.info("Hello Fabric world!");
+//		if (isStackedTrimsEnabled3) {
+//			LOGGER.info("trimmable_create_armor says, stacked_trims is here 3");
+//		}
 	}
 }

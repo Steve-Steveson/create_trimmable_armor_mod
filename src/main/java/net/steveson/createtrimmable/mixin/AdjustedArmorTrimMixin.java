@@ -22,7 +22,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import java.util.function.BiFunction;
 import java.util.function.Function;
 
-@Mixin(ArmorTrim.class)
+@Mixin(value = ArmorTrim.class, priority = 100)
 public abstract class AdjustedArmorTrimMixin {
 	@Shadow
 	@Final
